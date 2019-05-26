@@ -3,6 +3,17 @@ function data() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            apiData(data)
         });
 }
+
+function apiData(data) {
+    data.map(product => {
+        console.log("helloo", product)
+        document.querySelector(".title1").innerHTML = product["product_meta"]["title"];
+        document.querySelector(".image1").src = product["product_meta"]["img"];
+    });
+
+}
+
+
